@@ -13,16 +13,13 @@ import com.github.scribejava.apis.microsoftazureactivedirectory.BaseMicrosoftAzu
  */
 public class MicrosoftAzureActiveDirectory20Api extends BaseMicrosoftAzureActiveDirectoryApi {
 
-    protected MicrosoftAzureActiveDirectory20Api() {
+    public MicrosoftAzureActiveDirectory20Api(String tenantId) {
+
+        super(MicrosoftAzureActiveDirectoryVersion.V_2_0, tenantId);
+    }
+
+    public MicrosoftAzureActiveDirectory20Api() {
+
         super(MicrosoftAzureActiveDirectoryVersion.V_2_0);
-    }
-
-    private static class InstanceHolder {
-
-        private static final MicrosoftAzureActiveDirectory20Api INSTANCE = new MicrosoftAzureActiveDirectory20Api();
-    }
-
-    public static MicrosoftAzureActiveDirectory20Api instance() {
-        return InstanceHolder.INSTANCE;
     }
 }

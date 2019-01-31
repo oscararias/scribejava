@@ -27,7 +27,8 @@ public class MicrosoftAzureActiveDirectory20Example {
                 .apiSecret(clientSecret)
                 .scope("openid")
                 .callback("http://www.example.com/oauth_callback/")
-                .build(MicrosoftAzureActiveDirectory20Api.instance());
+                .build(new MicrosoftAzureActiveDirectory20Api(
+                        "common")); //Change the tenant for your own's or leave blank
         final Scanner in = new Scanner(System.in, "UTF-8");
         System.out.println("=== " + NETWORK_NAME + "'s OAuth Workflow ===");
         System.out.println();
